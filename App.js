@@ -5,7 +5,12 @@ import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>안뇽!</Text>
+      <View style={styles.yellowView}>
+        <Text>안뇽</Text>
+      </View>
+      <View style={styles.blueView}>
+        <Text>안뇽2</Text>
+      </View>
     </View>
   );
 }
@@ -13,11 +18,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "skyblue",
-    alignItems: "center",
-    justifyContent: "center",
   },
-  text: {
-    color: "white",
+  yellowView: {
+    flex: 1,
+    backgroundColor: "yellow",
+  },
+  blueView: {
+    flex: 1,
+    backgroundColor: "blue",
   },
 });
