@@ -20,6 +20,7 @@ export default class extends React.Component {
     } = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${API_KEY}`
     );
+    console.log(weather[0].main);
     this.setState({
       isLoading: false,
       condition: weather[0].main,
@@ -33,9 +34,7 @@ export default class extends React.Component {
       const {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
-      console.log(latitude, longitude);
       this.getWeather(latitude, longitude);
-      this.setState({ isLoading: false });
     } catch (error) {
       Alert.alert("위치를 찾을 수 없습니다.", "ㅜㅜ");
     }
